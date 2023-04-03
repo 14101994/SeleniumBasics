@@ -6,14 +6,17 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class windowHandle2 {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-		System.setProperty("webdriver.chrome.driver", "D:\\Akshay\\chromedriver_win32\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "D:\\\\Akshay\\\\chromeDriver V11\\\\chromedriver_win32 (1)\\\\chromedriver.exe");
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--remote-allow-origin=*");
+		WebDriver driver = new ChromeDriver(option);
 		driver.get("https://support.google.com/mail/answer/56256?hl=en");
 		System.out.println(driver.getTitle());
 		Thread.sleep(2000);
